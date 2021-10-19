@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2021_10_09_005833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "article_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "idx_article_author"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -23,4 +32,5 @@ ActiveRecord::Schema.define(version: 2021_10_09_005833) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "articles", "users"
 end
