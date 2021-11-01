@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Need to change serializer to send over the date_published and a blurb
@@ -38,6 +39,23 @@ const Blurb = styled.div`
   font-size: 1rem;
 `
 
+const ArticleLink = styled(Link)`
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 1rem;
+
+
+  &,
+  &:visited {
+    color: #000;
+  }
+
+  &:active,
+  &: hover {
+    color: orangered;
+  }
+`
+
 const ArticlePreview = ({props}) => {
   return(
     <>
@@ -48,6 +66,7 @@ const ArticlePreview = ({props}) => {
           <Author>{props.attributes.username}</Author>
         </MetaWrapper>
         <Blurb>{props.attributes.blurb}</Blurb>
+        <ArticleLink to={`/articles/${props.attributes.id}`}>Full Article &rarr;</ArticleLink>
       </Wrapper>
     </>
   )
