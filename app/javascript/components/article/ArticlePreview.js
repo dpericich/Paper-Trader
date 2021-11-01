@@ -7,8 +7,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
-  margin: 0 4rem 1.5rem;
+  width: 50%;
+  margin 1rem auto;
 
+  @media (max-width: 900px) {
+    width: 75%
+  }
+
+  @media (max-width: 500px) {
+    width: 95%;
+  }
 `
 
 const Title = styled.h3`
