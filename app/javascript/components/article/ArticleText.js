@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ArticleText = () => {
+const ArticleText = ({props}) => {
   return (
-    <div></div>
+    <div>{props.article_text}</div>
   )
 };
 
