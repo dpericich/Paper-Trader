@@ -8,8 +8,9 @@ const Wrapper = styled.div`
   align-items: left;
 `
 
-const ArticleTitle = styled.h1`
+const ArticleTitle = styled.h3`
   font-size: 2rem;
+  margin: 0rem;
 `
 
 const ArticleInfo = styled.div`
@@ -18,25 +19,25 @@ const ArticleInfo = styled.div`
   font-size: 1rem;
 `
 
-// At a later date I want this to be a link to an author page
+// TODO : At a later date I want this to be a link to an author page
 const ArticleAuthor = styled.p`
-
+  font-weight: 700;
 `
 
 const ArticleDate = styled.p`
-  font-weight: 700;
+  font-weight: 300;
   margin-left: 1rem;
 `
 
-const Title = () => {
+const Title = ({props}) => {
   return(
     <Wrapper>
       <ArticleTitle>
-        Tershawn Wharton Picks for the Win
+        {props.title}
       </ArticleTitle>
       <ArticleInfo>
-        <ArticleAuthor>Big Bunny</ArticleAuthor>
-        <ArticleDate>January 20th, 2021</ArticleDate>
+        <ArticleAuthor>{props.author}</ArticleAuthor>
+        <ArticleDate>{props.published_date}</ArticleDate>
       </ArticleInfo>
     </Wrapper>
   )
