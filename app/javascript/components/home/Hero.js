@@ -30,16 +30,24 @@ const Wrapper = styled.div`
   }
 `
 
+const TextWrapper = styled.div`
+  background-color: #ffffff25;
+  padding: 0rem 1rem;
+  border-radius: 1rem;
+`
+
 const HeroText = styled.h3`
-  color: #fff;
+  color: #45A29E;
   font-size: 3rem;
-  text-shadow: .3rem .3rem #000
+  text-shadow: .1rem .1rem #000
 `
 
 const Hero = () => {
   return(
     <Wrapper>
-      <HeroText>Practice. Learn. Grow</HeroText>
+      <TextWrapper>
+        <HeroText>TRADE TO LEARN</HeroText>
+      </TextWrapper>
     </Wrapper>
   )
 };
