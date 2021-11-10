@@ -1,6 +1,10 @@
-user = User.create({ first_name: "Daniel", last_name: "Pericich", username: "squiggy" })
+puts "------------creating users----------------"
+user = User.create!({ first_name: "Daniel", last_name: "Pericich", username: FFaker::Internet.user_name, role: "admin", email: FFaker::Internet.email, password: FFaker::Internet.password })
+user_extra = User.create!({ first_name: "Pixie", last_name: "Doge", username: FFaker::Internet.user_name, role: "trader", email: FFaker::Internet.email, password: FFaker::Internet.password })
+puts "created #{User.count} Users"
 
-articles = Article.create([
+puts "------------creating articles-------------"
+articles = Article.create!([
   { title: "The Great Eggscape", user_id: user.id, created_at: DateTime.now - 1.day,  article_text: "I'm baby master cleanse wayfarers 90's gluten-free vape. Hella normcore raclette green juice, poutine shaman pop-up sriracha hammock semiotics. Narwhal synth try-hard man braid seitan. Listicle cred heirloom butcher, bespoke sustainable craft beer everyday carry. Yuccie chillwave tofu skateboard cred hell of +1 irony jean shorts snackwave af church-key tumeric YOLO trust fund. +1 thundercats lumbersexual meditation 90's bespoke irony, PBR&B fanny pack pop-up tilde.
   Hammock drinking vinegar kale chips franzen. Post-ironic you probably haven't heard of them chambray marfa, hella venmo selvage la croix irony selfies lyft. Tumeric mixtape gentrify tilde fingerstache, cray slow-carb air plant synth prism umami VHS plaid twee. Try-hard fam tbh wayfarers live-edge hashtag DIY pitchfork ennui.
   Venmo 90's live-edge, brunch cray post-ironic iceland deep v lumbersexual helvetica. IPhone prism gastropub keytar tote bag, artisan truffaut cray literally sriracha tousled VHS hella. Listicle tilde wolf, godard squid kale chips skateboard. Tacos pinterest authentic pabst.
@@ -38,3 +42,4 @@ articles = Article.create([
   Twee skateboard green juice banh mi jianbing. Seitan vaporware fixie, authentic yr celiac subway tile raclette synth readymade distillery. Tousled occupy lyft chicharrones, heirloom celiac crucifix woke lumbersexual la croix hexagon street art. Typewriter kogi polaroid waistcoat dreamcatcher."
   }
 ])
+puts "created #{Article.count} Articles"
