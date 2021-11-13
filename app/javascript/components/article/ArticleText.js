@@ -6,7 +6,7 @@ const ArticleText = ({props}) => {
   const Wrapper = styled.div`
   `
 
-  const paragraph_text = props.article_text.split("\n").map((paragraph) => {
+  const paragraphsText = props.article_text.split("\n").map((paragraph) => {
     return (
       <Paragraph paragraphText={paragraph} />
     )
@@ -14,7 +14,7 @@ const ArticleText = ({props}) => {
 
   return (
     <Wrapper>
-      {paragraph_text}
+      {paragraphsText}
     </Wrapper>
   )
 };
