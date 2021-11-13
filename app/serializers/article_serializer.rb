@@ -10,8 +10,8 @@ class ArticleSerializer
     object.article_text.split(" ")[0..38].join(" ") + "..."
   end
 
-  attribute :username do |object|
-    object.user.username
+  attribute :author do |object|
+    "#{object.user.first_name} #{object.user.last_name}"
   end
 
   # belongs_to :author, record_type: :user
