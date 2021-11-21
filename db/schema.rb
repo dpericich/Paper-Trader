@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2021_10_09_005833) do
     t.index ["user_id"], name: "idx_article_author"
   end
 
+  create_table "stocks_positions", force: :cascade do |t|
+    t.string "company_name"
+    t.integer "shares"
+    t.decimal "price_per_share"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "portfolio_id"
+    t.index ["portfolio_id"], name: "index_stocks_positions_on_portfolio_id"
+    t.index ["user_id"], name: "index_stocks_positions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
